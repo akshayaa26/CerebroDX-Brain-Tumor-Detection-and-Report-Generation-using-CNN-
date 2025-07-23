@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="project-title">CerebroDx - Brain Tumor Detection and Report Generator using CNN</h1>
+
+    <h2>Prediction Result</h2>
+
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Age:</strong> {{ age }}</p>
+    <p><strong>Gender:</strong> {{ gender }}</p>
+    <p><strong>Symptoms:</strong> {{ symptoms }}</p>
+    <p><strong>Other Symptoms:</strong> {{ other_symptoms }}</p>
+    <p><strong>Tumor Type:</strong> {{ prediction }}</p>
+    <p><strong>Confidence:</strong> {{ confidence | round(2) }}%</p>
+
+    <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" width="300"><br><br>
+
+    <form action="/generate_report" method="POST">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="age" value="{{ age }}">
+        <input type="hidden" name="gender" value="{{ gender }}">
+        <input type="hidden" name="symptoms" value="{{ symptoms }}">
+        <input type="hidden" name="other_symptoms" value="{{ other_symptoms }}">
+        <input type="hidden" name="prediction" value="{{ prediction }}">
+        <input type="hidden" name="confidence" value="{{ confidence }}">
+        <input type="hidden" name="image_filename" value="{{ image_filename }}">
+        <button type="submit">Generate Report</button>
+    </form>
+</body>
+</html>
