@@ -4,6 +4,5 @@ In CerebroDx we have used the deep learning model. It uses a Convolutional Neura
 not.
 <img width="1366" height="768" alt="Screenshot (324)" src="https://github.com/user-attachments/assets/8c72df66-ae93-4268-a7b4-ecf122457c73" />
 
-
-#DataSet
+<h1>Dataset</h2>
 Dataset Link:https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
